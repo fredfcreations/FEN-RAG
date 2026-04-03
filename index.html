@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Chat</title>
+</head>
+
+<body>
+	<h1>Welcome</h1>
+</body>
+<link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+<script type="module">
+	import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+createChat({
+	webhookUrl: 'https://n8n-fw5i.srv1547539.hstgr.cloud/webhook/e82a382b-113b-4ea8-b6c5-98c756c99ec0/chat',
+	webhookConfig: {
+		method: 'POST',
+		headers: {}
+	},
+	target: '#n8n-chat',
+	mode: 'fullscreen',
+	chatInputKey: 'chatInput',
+	chatSessionKey: 'sessionId',
+	loadPreviousSession: true,
+	metadata: {},
+	showWelcomeScreen: false,
+	defaultLanguage: 'en',
+	initialMessages: [
+		'Hi there! 👋',
+		'How can I assist you today?'
+	],
+	i18n: {
+		en: {
+			title: 'Hi there!',
+			subtitle: "Start a chat.",
+			footer: '',
+			getStarted: 'New Conversation',
+			inputPlaceholder: 'Type your question..',
+		},
+	},
+	enableStreaming: false,
+});
+</script>
+</html>
